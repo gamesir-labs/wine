@@ -2329,7 +2329,9 @@ static void hacks_init(void)
     if (env_str) simulate_writecopy = atoi(env_str);
     else if (main_argc > 1 &&
                           (strstr(main_argv[1], "UplayWebCore.exe")
-                           || (strstr(main_argv[1], "Battle.net.exe"))))
+                           || (strstr(main_argv[1], "Battle.net.exe"))
+                           || (strstr(main_argv[1], "skse64_loader.exe"))
+                           || (strstr(main_argv[1], "f4se_loader.exe"))))
         simulate_writecopy = TRUE;
     else if (sgi) simulate_writecopy = !strcmp(sgi, "1608730") /* Dawn of Corruption */
                                        || !strcmp(sgi, "1680700") /* Purgo box */
@@ -2339,7 +2341,12 @@ static void hacks_init(void)
                                        || !strcmp(sgi, "2152990") /* Dinogen Online */
                                        || !strcmp(sgi, "2176450") /* Mr. Hopp's Playhouse 3 */
                                        || !strcmp(sgi, "2329630") /* Lovey-Dovey Lockdown */
-                                       || !strcmp(sgi, "2361360"); /* Hentai Maid Memories */
+                                       || !strcmp(sgi, "2361360") /* Hentai Maid Memories */
+                                       || !strcmp(sgi, "489830")  /* The Elder Scrolls V: Skyrim Special Edition */
+                                       || !strcmp(sgi, "72850")   /* The Elder Scrolls V: Skyrim */
+                                       || !strcmp(sgi, "377160")  /* Fallout 4 */
+                                       || !strcmp(sgi, "22380")   /* Fallout: New Vegas */
+                                       || !strcmp(sgi, "22300");  /* Fallout 3 */
 
     if (sgi) wine_allocs_2g_limit = !strcmp(sgi, "359870");
     if (wine_allocs_2g_limit) ERR("Allocation 2g limit enabled.\n");
